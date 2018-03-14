@@ -6,7 +6,7 @@ import math
 
 
 
-listak = [p3,p4,p5,p6,p7,p8]
+listak = [p3,p4,p5]
 kilove = [0]
 
 def ciklusos(szam1,szam2):
@@ -65,3 +65,4 @@ for i3 in listak[0]:
         if n1 in kilove: kilove.remove(n1)
 
 """
+
