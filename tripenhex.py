@@ -55,4 +55,5 @@ def generating_function():
 
 
 p3, p4, p5, p6, p7, p8 = generating_function()
-print(p3)
+for i in p3
+print("{: 4} {: 4} {: 4} {: 4} {: 4} {: 4}".format(p3, p4, p5, p6, p7, p8))
