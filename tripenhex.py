@@ -32,14 +32,15 @@ p3, p4, p5, p6, p7, p8 = generating_function()
 
 
 
-listak = [p3,p4,p5]
+listak = [p3,p4,p5,p6,p7,p8]
 kilove = [0]
 
 def ciklusos(szam1,szam2):
-    if str(szam1)[3:] == str(szam2)[:2]:
+    if str(szam1)[2:] == str(szam2)[:2]:
         return True
     return False
 
+"""
 for i3 in listak[0]:
     for n1 in range(1,3):
         if n1 not in kilove:
@@ -49,10 +50,10 @@ for i3 in listak[0]:
                     for n2 in range(1,3):
                         if n2 not in kilove:
                             for i5 in listak[n2]:
-                                if ciklusos(i4,i5):
+                                if ciklusos(i4,i5) and ciklusos(i5,i3):
                                     kilove.append(n2)
-                                    print(i3,i4,i5)
-                        if n2 in kilove: kilove.remove(n1)
+                                    print(i3,i4,i5)                  
+                        if n2 in kilove: kilove.remove(n2)
         if n1 in kilove: kilove.remove(n1)
                     
 """
@@ -67,30 +68,35 @@ for i3 in listak[0]:
                             for i5 in listak[n2]:
                                 if ciklusos(i4,i5):
                                     kilove.append(n2)
-
-                                    for n2 in range(1,6):
-                                        if n2 not in kilove:
-                                            for i5 in listak[n2]:
-                                                if ciklusos(i4,i5):
-                                                    kilove.append(n2)
-
-                                                    for n2 in range(1,6):
-                                                        if n2 not in kilove:
-                                                            for i5 in listak[n2]:
-                                                                if ciklusos(i4,i5):
-                                                                    kilove.append(n2)
-
-                                                                    for n2 in range(1,6):
-                                                                        if n2 not in kilove:
-                                                                            for i5 in listak[n2]:
-                                                                                if ciklusos(i4,i5):
-                                                                                    kilove.append(n2)
-
-
-
-                        if n2 in kilove: kilove.remove(n1)
-        if n1 in kilove: kilove.remove(n1)
+                                    for n3 in range(1,6):
+                                        if n3 not in kilove:
+                                            for i6 in listak[n3]:
+                                                if ciklusos(i5,i6):
+                                                    kilove.append(n3)
+                                                    for n4 in range(1,6):
+                                                        if n4 not in kilove:
+                                                            for i7 in listak[n4]:
+                                                                if ciklusos(i6,i7):
+                                                                    kilove.append(n4)
+                                                                    for n5 in range(1,6):
+                                                                        if n5 not in kilove:
+                                                                            for i8 in listak[n5]:
+                                                                                if ciklusos(i7,i8):
+                                                                                    if ciklusos(i8,i3):
+                                                                                        print(i3,i4,i5,i6,i7,i8)
+                                                                                        print(n1,n2,n3,n4,n5)
+                                                                                        print(i3+i4+i5+i6+i7+i8)
+                                                                                        #kilove.append(n5)
+                                                        kilove = kilove[:4]
+                                        kilove = kilove[:3]
+                        kilove = kilove[:2]
+        kilove = kilove[:1]
 
 """
 
-
+                                                                        if n5 in kilove: kilove.remove(n5)
+                                                        if n4 in kilove: kilove.remove(n4)
+                                        if n3 in kilove: kilove.remove(n3)
+                        if n2 in kilove: kilove.remove(n2)
+        if n1 in kilove: kilove.remove(n1)
+"""
